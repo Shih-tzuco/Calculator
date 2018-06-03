@@ -40,7 +40,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.resultButton = new System.Windows.Forms.Button();
-            this.devideButton = new System.Windows.Forms.Button();
+            this.divideButton = new System.Windows.Forms.Button();
             this.multiplyButton = new System.Windows.Forms.Button();
             this.minusButton = new System.Windows.Forms.Button();
             this.plusButton = new System.Windows.Forms.Button();
@@ -171,14 +171,14 @@
             // 
             // devideButton
             // 
-            this.devideButton.Enabled = false;
-            this.devideButton.Location = new System.Drawing.Point(217, 80);
-            this.devideButton.Name = "devideButton";
-            this.devideButton.Size = new System.Drawing.Size(55, 40);
-            this.devideButton.TabIndex = 12;
-            this.devideButton.Text = "/";
-            this.devideButton.UseVisualStyleBackColor = true;
-            this.devideButton.Click += new System.EventHandler(this.operator_Click);
+            this.divideButton.Enabled = false;
+            this.divideButton.Location = new System.Drawing.Point(217, 80);
+            this.divideButton.Name = "devideButton";
+            this.divideButton.Size = new System.Drawing.Size(55, 40);
+            this.divideButton.TabIndex = 12;
+            this.divideButton.Text = "/";
+            this.divideButton.UseVisualStyleBackColor = true;
+            this.divideButton.Click += new System.EventHandler(this.operator_Click);
             // 
             // multiplyButton
             // 
@@ -245,7 +245,7 @@
             this.Controls.Add(this.plusButton);
             this.Controls.Add(this.minusButton);
             this.Controls.Add(this.multiplyButton);
-            this.Controls.Add(this.devideButton);
+            this.Controls.Add(this.divideButton);
             this.Controls.Add(this.resultButton);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -281,7 +281,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button resultButton;
-        private System.Windows.Forms.Button devideButton;
+        private System.Windows.Forms.Button divideButton;
         private System.Windows.Forms.Button multiplyButton;
         private System.Windows.Forms.Button minusButton;
         private System.Windows.Forms.Button plusButton;

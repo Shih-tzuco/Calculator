@@ -16,7 +16,7 @@ namespace Calculator
 
         private void Active_Button()
         {
-            devideButton.Enabled = true;
+            divideButton.Enabled = true;
             multiplyButton.Enabled = true;
             minusButton.Enabled = true;
             plusButton.Enabled = true;
@@ -24,7 +24,7 @@ namespace Calculator
 
         private void Not_Active_Button()
         {
-            devideButton.Enabled = false;
+            divideButton.Enabled = false;
             multiplyButton.Enabled = false;
             minusButton.Enabled = false;
             plusButton.Enabled = false;
