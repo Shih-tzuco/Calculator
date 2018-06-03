@@ -5,9 +5,9 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        double value = 0;
-        string operation = "";
-        bool operation_pressed = false;
+        private double value = 0;
+        private string operation = "";
+        private bool operationPressed = false;
 
         public Form1()
         {
@@ -32,14 +32,14 @@ namespace Calculator
 
         private void button_Click(object sender, EventArgs e)
         {
-            if ((textBox.Text == "0") || (operation_pressed))
+            if ((textBox.Text == "0") || (operationPressed))
             {
                 textBox.Clear();
             }
             Active_Button();
             Button button = (Button)sender;
             textBox.Text = textBox.Text + button.Text;
-            if (operation_pressed == true)
+            if (operationPressed == true)
             {
                 Not_Active_Button();
                 resultButton.Enabled = true;
@@ -73,7 +73,7 @@ namespace Calculator
             Not_Active_Button();
             value = Double.Parse(textBox.Text);
             Not_Active_Button();
-            operation_pressed = true;
+            operationPressed = true;
         }
 
         private void buttonOperation_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace Calculator
                 default:
                     break;
             }
-            operation_pressed = false;
+            operationPressed = false;
             resultButton.Enabled = false;
         }
 
