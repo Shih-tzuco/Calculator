@@ -44,12 +44,10 @@ namespace Calculator
                 Not_Active_Button();
                 resultButton.Enabled = true;
             }
-          
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
-        {
-            
+        {   
             Button buttonFirst = (Button)sender;
             Button buttonSecond = (Button)sender;
             if (operation != String.Empty)
