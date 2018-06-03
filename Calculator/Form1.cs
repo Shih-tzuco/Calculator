@@ -39,7 +39,7 @@ namespace Calculator
             Active_Button();
             Button button = (Button)sender;
             textBox.Text = textBox.Text + button.Text;
-           if (operation_pressed == true)
+            if (operation_pressed == true)
             {
                 Not_Active_Button();
                 resultButton.Enabled = true;
@@ -47,7 +47,7 @@ namespace Calculator
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
-        {   
+        {
             Button buttonFirst = (Button)sender;
             Button buttonSecond = (Button)sender;
             if (operation != String.Empty)
@@ -73,9 +73,9 @@ namespace Calculator
             Not_Active_Button();
             value = Double.Parse(textBox.Text);
             Not_Active_Button();
-            operation_pressed = true; 
+            operation_pressed = true;
         }
-        
+
         private void buttonOperation_Click(object sender, EventArgs e)
         {
             label.Text = "";
