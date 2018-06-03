@@ -22,17 +22,17 @@ namespace Calculator
             plusButton.Enabled = true;
         }
 
-        private void ILabelShow(object sender, EventArgs e)
-        {
-            label.Text = textBox.Text;
-        }
-
         private void NotActiveButton()
         {
             divideButton.Enabled = false;
             multiplyButton.Enabled = false;
             minusButton.Enabled = false;
             plusButton.Enabled = false;
+        }
+
+        private void ILabelShow(object sender, EventArgs e)
+        {
+            label.Text = textBox.Text;
         }
 
         private void ButtonClick(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Calculator
             ActiveButton();
             Button button = (Button)sender;
             textBox.Text = textBox.Text + button.Text;
-            if (operationPressed == true)
+            if (operationPressed)
             {
                 NotActiveButton();
                 resultButton.Enabled = true;

@@ -50,7 +50,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(75, 218);
+            this.button1.Location = new System.Drawing.Point(73, 218);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 40);
             this.button1.TabIndex = 0;
@@ -150,7 +150,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(14, 218);
+            this.button11.Location = new System.Drawing.Point(12, 218);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(55, 40);
             this.button11.TabIndex = 10;
@@ -161,7 +161,7 @@
             // resultButton
             // 
             this.resultButton.Enabled = false;
-            this.resultButton.Location = new System.Drawing.Point(136, 218);
+            this.resultButton.Location = new System.Drawing.Point(134, 218);
             this.resultButton.Name = "resultButton";
             this.resultButton.Size = new System.Drawing.Size(55, 40);
             this.resultButton.TabIndex = 11;
@@ -169,11 +169,11 @@
             this.resultButton.UseVisualStyleBackColor = true;
             this.resultButton.Click += new System.EventHandler(this.ButtonOperationClick);
             // 
-            // devideButton
+            // divideButton
             // 
             this.divideButton.Enabled = false;
             this.divideButton.Location = new System.Drawing.Point(217, 80);
-            this.divideButton.Name = "devideButton";
+            this.divideButton.Name = "divideButton";
             this.divideButton.Size = new System.Drawing.Size(55, 40);
             this.divideButton.TabIndex = 12;
             this.divideButton.Text = "/";
@@ -235,7 +235,7 @@
             this.label.Text = "      ";
             this.label.Click += new System.EventHandler(this.ILabelShow);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,7 +259,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.ResumeLayout(false);
