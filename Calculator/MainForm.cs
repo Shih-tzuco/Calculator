@@ -14,7 +14,7 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void Active_Button()
+        private void ActiveButton()
         {
             divideButton.Enabled = true;
             multiplyButton.Enabled = true;
@@ -22,7 +22,12 @@ namespace Calculator
             plusButton.Enabled = true;
         }
 
-        private void Not_Active_Button()
+        private void ILabelShow(object sender, EventArgs e)
+        {
+            label.Text = textBox.Text;
+        }
+
+        private void NotActiveButton()
         {
             divideButton.Enabled = false;
             multiplyButton.Enabled = false;
@@ -30,23 +35,23 @@ namespace Calculator
             plusButton.Enabled = false;
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void ButtonClick(object sender, EventArgs e)
         {
             if ((textBox.Text == "0") || (operationPressed))
             {
                 textBox.Clear();
             }
-            Active_Button();
+            ActiveButton();
             Button button = (Button)sender;
             textBox.Text = textBox.Text + button.Text;
             if (operationPressed == true)
             {
-                Not_Active_Button();
+                NotActiveButton();
                 resultButton.Enabled = true;
             }
         }
 
-        private void buttonCE_Click(object sender, EventArgs e)
+        private void ButtonCEClick(object sender, EventArgs e)
         {
             Button buttonFirst = (Button)sender;
             Button buttonSecond = (Button)sender;
@@ -54,29 +59,29 @@ namespace Calculator
             {
                 textBox.Text = textBox.Text + buttonSecond.Text;
                 textBox.Text = String.Empty;
-                Not_Active_Button();
+                NotActiveButton();
             }
             else if (operation == String.Empty)
             {
                 textBox.Text = textBox.Text + buttonFirst;
                 textBox.Text = String.Empty;
-                Not_Active_Button();
+                NotActiveButton();
                 label.Text = "";
             }
         }
 
-        private void operator_Click(object sender, EventArgs e)
+        private void OperatorClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            label_Click(sender, e);
+            ILabelShow(sender, e);
             operation = button.Text;
-            Not_Active_Button();
+            NotActiveButton();
             value = Double.Parse(textBox.Text);
-            Not_Active_Button();
+            NotActiveButton();
             operationPressed = true;
         }
 
-        private void buttonOperation_Click(object sender, EventArgs e)
+        private void ButtonOperationClick(object sender, EventArgs e)
         {
             label.Text = "";
             switch (operation)
@@ -100,17 +105,12 @@ namespace Calculator
             resultButton.Enabled = false;
         }
 
-        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-        }
-
-        private void label_Click(object sender, EventArgs e)
-        {
-            label.Text = textBox.Text;
         }
     }
 }
