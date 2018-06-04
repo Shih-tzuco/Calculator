@@ -30,7 +30,7 @@ namespace Calculator
             plusButton.Enabled = false;
         }
 
-        private void ILabelShow(object sender, EventArgs e)
+        private void LabelShow(object sender, EventArgs e)
         {
             label.Text = textBox.Text;
         }
@@ -81,7 +81,7 @@ namespace Calculator
         private void OperatorClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            ILabelShow(sender, e);
+            LabelShow(sender, e);
             operation = button.Text;
             NotActiveButton();
             value = Double.Parse(textBox.Text);
@@ -89,7 +89,6 @@ namespace Calculator
             operationPressed = true;
         }
 
-       
         private void ActionMultiply()
         {
             textBox.Text = (value * double.Parse(textBox.Text)).ToString();

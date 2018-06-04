@@ -233,7 +233,7 @@
             this.label.Size = new System.Drawing.Size(40, 23);
             this.label.TabIndex = 17;
             this.label.Text = "      ";
-            this.label.Click += new System.EventHandler(this.ILabelShow);
+            this.label.Click += new System.EventHandler(this.LabelShow);
             // 
             // MainForm
             // 
