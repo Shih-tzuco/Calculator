@@ -63,16 +63,16 @@ namespace Calculator
         {
             Button buttonFirst = (Button)sender;
             Button buttonSecond = (Button)sender;
-            if (operation != String.Empty)
+            if (operation != string.Empty)
             {
                 textBox.Text = textBox.Text + buttonSecond.Text;
-                textBox.Text = String.Empty;
+                textBox.Text = string.Empty;
                 NotActiveButton();
             }
-            else if (operation == String.Empty)
+            else if (operation == string.Empty)
             {
                 textBox.Text = textBox.Text + buttonFirst;
-                textBox.Text = String.Empty;
+                textBox.Text = string.Empty;
                 NotActiveButton();
                 label.Text = "";
             }
