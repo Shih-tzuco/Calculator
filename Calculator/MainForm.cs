@@ -84,7 +84,7 @@ namespace Calculator
             LabelShow(sender, e);
             operation = button.Text;
             NotActiveButton();
-            value = Double.Parse(textBox.Text);
+            value = double.Parse(textBox.Text);
             NotActiveButton();
             operationPressed = true;
         }
