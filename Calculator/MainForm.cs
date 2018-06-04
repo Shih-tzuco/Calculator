@@ -92,22 +92,22 @@ namespace Calculator
        
         private void ActionMultiply()
         {
-            textBox.Text = (value * Double.Parse(textBox.Text)).ToString();
+            textBox.Text = (value * double.Parse(textBox.Text)).ToString();
         }
 
         private void ActionDivide()
         {
-            textBox.Text = (value / Double.Parse(textBox.Text)).ToString();
+            textBox.Text = (value / double.Parse(textBox.Text)).ToString();
         }
 
         private void ActionPlus()
         {
-            textBox.Text = (value + Double.Parse(textBox.Text)).ToString();
+            textBox.Text = (value + double.Parse(textBox.Text)).ToString();
         }
 
         private void ActionMinus()
         {
-            textBox.Text = (value - Double.Parse(textBox.Text)).ToString();
+            textBox.Text = (value - double.Parse(textBox.Text)).ToString();
         }
 
         private void ButtonOperationClick(object sender, EventArgs e)
