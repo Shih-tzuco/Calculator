@@ -67,6 +67,7 @@ namespace Calculator
             {
                 textBox.Text = textBox.Text + buttonSecond.Text;
                 textBox.Text = string.Empty;
+                resultButton.Enabled = false;
                 NotActiveButton();
             }
             else if (operation == string.Empty)
