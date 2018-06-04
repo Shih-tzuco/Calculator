@@ -5,8 +5,8 @@ namespace Calculator
 {
     public partial class MainForm : Form
     {
-        private double value = 0;
         private string operation = "";
+        private double value = 0;
         private bool operationPressed = false;
 
         public MainForm()
@@ -33,6 +33,14 @@ namespace Calculator
         private void ILabelShow(object sender, EventArgs e)
         {
             label.Text = textBox.Text;
+        }
+
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void ButtonClick(object sender, EventArgs e)
@@ -81,36 +89,47 @@ namespace Calculator
             operationPressed = true;
         }
 
+       
+        private void ActionMultiply()
+        {
+            textBox.Text = (value * Double.Parse(textBox.Text)).ToString();
+        }
+
+        private void ActionDivide()
+        {
+            textBox.Text = (value / Double.Parse(textBox.Text)).ToString();
+        }
+
+        private void ActionPlus()
+        {
+            textBox.Text = (value + Double.Parse(textBox.Text)).ToString();
+        }
+
+        private void ActionMinus()
+        {
+            textBox.Text = (value - Double.Parse(textBox.Text)).ToString();
+        }
+
         private void ButtonOperationClick(object sender, EventArgs e)
         {
             label.Text = "";
             switch (operation)
             {
-                case "/":
-                    textBox.Text = (value / Double.Parse(textBox.Text)).ToString();
-                    break;
                 case "*":
-                    textBox.Text = (value * Double.Parse(textBox.Text)).ToString();
+                    ActionMultiply();
                     break;
-                case "-":
-                    textBox.Text = (value - Double.Parse(textBox.Text)).ToString();
+                case "/":
+                    ActionDivide();
                     break;
                 case "+":
-                    textBox.Text = (value + Double.Parse(textBox.Text)).ToString();
+                    ActionPlus();
                     break;
-                default:
+                case "-":
+                    ActionMinus();
                     break;
             }
             operationPressed = false;
             resultButton.Enabled = false;
-        }
-
-        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
     }
 }
