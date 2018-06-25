@@ -126,6 +126,7 @@ namespace Calculator
             Button button = (Button)sender;
             LabelShow(sender, e);
             operation = button.Text;
+            
             NotActiveButton();
             value = double.Parse(textBox.Text);
             NotActiveButton();

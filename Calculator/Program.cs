@@ -9,7 +9,7 @@ namespace Calculator
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        private static void Main()
+        internal static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
