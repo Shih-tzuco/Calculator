@@ -6,8 +6,8 @@ namespace Calculator
     public partial class MainForm : Form
     {
         private string operation = "";
-        private double value = 0;
         private bool operationPressed = false;
+        private double value = 0;
 
         public MainForm()
         {
@@ -17,46 +17,37 @@ namespace Calculator
         private void ActiveButton()
         {
             divideButton.Enabled = true;
-            multiplyButton.Enabled = true;
             minusButton.Enabled = true;
+            multiplyButton.Enabled = true;
             plusButton.Enabled = true;
         }
 
         private void NotActiveButton()
         {
             divideButton.Enabled = false;
-            multiplyButton.Enabled = false;
             minusButton.Enabled = false;
+            multiplyButton.Enabled = false;
             plusButton.Enabled = false;
         }
 
-        private void LabelShow(object sender, EventArgs e)
+        private void ActionDivide()
         {
-            label.Text = textBox.Text;
+            textBox.Text = (value / double.Parse(textBox.Text)).ToString();
         }
 
-        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        private void ActionMinus()
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            textBox.Text = (value - double.Parse(textBox.Text)).ToString();
         }
 
-        private void ButtonClick(object sender, EventArgs e)
+        private void ActionMultiply()
         {
-            if ((textBox.Text == "0") || (operationPressed))
-            {
-                textBox.Clear();
-            }
-            ActiveButton();
-            Button button = (Button)sender;
-            textBox.Text = textBox.Text + button.Text;
-            if (operationPressed)
-            {
-                NotActiveButton();
-                resultButton.Enabled = true;
-            }
+            textBox.Text = (value * double.Parse(textBox.Text)).ToString();
+        }
+
+        private void ActionPlus()
+        {
+            textBox.Text = (value + double.Parse(textBox.Text)).ToString();
         }
 
         private void ButtonCEClick(object sender, EventArgs e)
@@ -79,35 +70,20 @@ namespace Calculator
             }
         }
 
-        private void OperatorClick(object sender, EventArgs e)
+        private void ButtonClick(object sender, EventArgs e)
         {
+            if ((textBox.Text == "0") || (operationPressed))
+            {
+                textBox.Clear();
+            }
+            ActiveButton();
             Button button = (Button)sender;
-            LabelShow(sender, e);
-            operation = button.Text;
-            NotActiveButton();
-            value = double.Parse(textBox.Text);
-            NotActiveButton();
-            operationPressed = true;
-        }
-
-        private void ActionMultiply()
-        {
-            textBox.Text = (value * double.Parse(textBox.Text)).ToString();
-        }
-
-        private void ActionDivide()
-        {
-            textBox.Text = (value / double.Parse(textBox.Text)).ToString();
-        }
-
-        private void ActionPlus()
-        {
-            textBox.Text = (value + double.Parse(textBox.Text)).ToString();
-        }
-
-        private void ActionMinus()
-        {
-            textBox.Text = (value - double.Parse(textBox.Text)).ToString();
+            textBox.Text = textBox.Text + button.Text;
+            if (operationPressed)
+            {
+                NotActiveButton();
+                resultButton.Enabled = true;
+            }
         }
 
         private void ButtonOperationClick(object sender, EventArgs e)
@@ -130,6 +106,30 @@ namespace Calculator
             }
             operationPressed = false;
             resultButton.Enabled = false;
+        }
+
+        private void LabelShow(object sender, EventArgs e)
+        {
+            label.Text = textBox.Text;
+        }
+
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void OperatorClick(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            LabelShow(sender, e);
+            operation = button.Text;
+            NotActiveButton();
+            value = double.Parse(textBox.Text);
+            NotActiveButton();
+            operationPressed = true;
         }
     }
 }
