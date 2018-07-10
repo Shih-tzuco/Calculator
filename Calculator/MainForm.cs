@@ -22,14 +22,6 @@ namespace Calculator
             plusButton.Enabled = true;
         }
 
-        private void NotActiveButton()
-        {
-            divideButton.Enabled = false;
-            minusButton.Enabled = false;
-            multiplyButton.Enabled = false;
-            plusButton.Enabled = false;
-        }
-
         private void ActionDivide()
         {
             textBox.Text = (value / double.Parse(textBox.Text)).ToString();
@@ -108,29 +100,33 @@ namespace Calculator
             resultButton.Enabled = false;
         }
 
-        private void LabelShow(object sender, EventArgs e)
+        private void NotActiveButton()
         {
-            label.Text = textBox.Text;
-        }
-
-        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            divideButton.Enabled = false;
+            minusButton.Enabled = false;
+            multiplyButton.Enabled = false;
+            plusButton.Enabled = false;
         }
 
         private void OperatorClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            LabelShow(sender, e);
             operation = button.Text;
+
             
             NotActiveButton();
             value = double.Parse(textBox.Text);
+            label.Text = value + " " + operation;
             NotActiveButton();
             operationPressed = true;
+        }
+
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar > 0 || e.KeyChar < 9)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
