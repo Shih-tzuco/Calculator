@@ -112,7 +112,6 @@ namespace Calculator
         {
             Button button = (Button)sender;
             operation = button.Text;
-
             
             NotActiveButton();
             value = double.Parse(textBox.Text);
